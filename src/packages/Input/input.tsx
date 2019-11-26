@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Icone } from "./style";
-import { IInputGroup } from "./type";
+import { IInput } from "./type";
 
-export const InputGroup = (props: IInputGroup) => {
+export const Input = (props: IInput) => {
   const {
     title,
     type,
