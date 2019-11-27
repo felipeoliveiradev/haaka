@@ -12,11 +12,11 @@ export const App: React.FunctionComponent = () => {
   return (
     <>
       <Modal />
-      <Header />
+      {/* <Header /> */}
       <Router>
         <Routers />
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
