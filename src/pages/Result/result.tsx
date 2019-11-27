@@ -39,7 +39,6 @@ export const Result = (props: IResult) => {
                             type="radio"
                             value="1"
                             name="question"
-                            onChange={handleChange}
                           />
                         </label>
                       ) : (
@@ -52,7 +51,6 @@ export const Result = (props: IResult) => {
                             type="radio"
                             value="2"
                             name="question"
-                            onChange={handleChange}
                           />
                         </label>
                       )}
