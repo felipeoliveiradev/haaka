@@ -7,7 +7,7 @@
   "rules": {
     "ban-ts-ignore": true,
     "member-access": true,
-    "no-any": true,
+    "no-any": false,
     "no-empty-interface": true,
     "no-for-in": true,
     "no-import-side-effect": true,
