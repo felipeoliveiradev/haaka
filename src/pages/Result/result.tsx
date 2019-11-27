@@ -1,5 +1,5 @@
 import { Base } from "assets/images";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Container } from "./style";
 import { IResult } from "./types";
 

@@ -9,10 +9,9 @@ export const Questions = (props: IQuestions) => {
   const [question, setQuestion] = useState();
   const [resposta, setResposta] = useState();
   const history = useHistory();
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNTc0ODY2NzMzLCJleHAiOjE1NzQ4NzAzMzN9.e3DKvwFvplep20MgA9OA6vvP4OsPKZImfRAd0iw8qik";
+
   const getQuestionNow = async () => {
-    const data = await callApi("GET", `questions`, token);
+    const data = await callApi("GET", `questions`);
     if (data.res.status === 200) {
       if (data.text !== question) {
         setQuestion(data.text);
@@ -24,7 +23,7 @@ export const Questions = (props: IQuestions) => {
     const body = {
       answer: resposta
     };
-    const data = await callApi("POST", `answers/${question.id}`, token, body);
+    const data = await callApi("POST", `answers/${question.id}`, body);
     if (data.res.status === 200) {
       if (data.text !== question) {
         getQuestionNow();
@@ -33,10 +32,14 @@ export const Questions = (props: IQuestions) => {
   };
   useEffect(() => {
     getQuestionNow();
-    if (!question) {
+  }, []);
+
+  useEffect(() => {
+    if (question === null) {
       history.push("/result");
     }
-  }, []);
+    // console.log(question)
+  }, [question]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setResposta(event.target.value);

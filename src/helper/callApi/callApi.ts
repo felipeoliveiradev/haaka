@@ -1,6 +1,8 @@
 const API = process.env.REACT_APP_BASE_API;
 
-export const callApi = (method: string, path: string, protect?: string, data?: object, ) => {
+export const callApi = (method: string, path: string, data?: object, ) => {
+  const token = localStorage.getItem("token");
+  const protect = token ? token : "";
   return fetch(`${API}/${path}`, {
     body: JSON.stringify(data),
     headers: protect ? {
